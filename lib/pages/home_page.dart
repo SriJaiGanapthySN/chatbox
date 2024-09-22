@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
         ),
       ),
       body: _buildUserList(),
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
     );
   }
   //build user list except the logged in user
@@ -66,7 +66,7 @@ class HomePage extends StatelessWidget {
           },
           text: userData["email"]);
     } else {
-      return SizedBox.shrink();
+      return const SizedBox.shrink();
     }
   }
 }

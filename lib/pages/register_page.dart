@@ -32,7 +32,7 @@ class RegisterPage extends StatelessWidget {
     } else {
       showDialog(
           context: context,
-          builder: (context) => AlertDialog(
+          builder: (context) => const AlertDialog(
                 title: Text("Passwords You entered Are not same"),
               ));
     }

@@ -30,7 +30,7 @@ class _ChatPageState extends State<ChatPage> {
     super.initState();
     myfocusnode.addListener(() {
       if (myfocusnode.hasFocus) {
-        Future.delayed(Duration(milliseconds: 500), () => scrollDown());
+        Future.delayed(const Duration(milliseconds: 500), () => scrollDown());
       }
     });
   }
@@ -46,7 +46,7 @@ class _ChatPageState extends State<ChatPage> {
 
   void scrollDown() {
     _scrollController.animateTo(_scrollController.position.maxScrollExtent,
-        curve: Curves.bounceIn, duration: Duration(seconds: 1));
+        curve: Curves.bounceIn, duration: const Duration(seconds: 1));
   }
 
   //sendmessages
@@ -85,11 +85,11 @@ class _ChatPageState extends State<ChatPage> {
       stream: _chatService.getmessages(widget.recieverid, senderid),
       builder: (context, snapshot) {
         if (snapshot.hasError) {
-          return Text("error");
+          return const Text("error");
         }
 
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Text("loading...");
+          return const Text("loading...");
         }
 
         return ListView(
@@ -127,11 +127,11 @@ class _ChatPageState extends State<ChatPage> {
           )),
           Container(
             decoration:
-                BoxDecoration(color: Colors.blue, shape: BoxShape.circle),
-            margin: EdgeInsets.only(right: 20),
+                const BoxDecoration(color: Colors.blue, shape: BoxShape.circle),
+            margin: const EdgeInsets.only(right: 20),
             child: IconButton(
                 onPressed: sendmessages,
-                icon: Icon(
+                icon: const Icon(
                   Icons.send_rounded,
                   color: Colors.white,
                 )),

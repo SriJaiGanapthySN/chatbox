@@ -18,8 +18,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: AuthGate(),
-      theme: light_mode,
+      home: const AuthGate(),
+      theme: lightMode,
     );
   }
 }
