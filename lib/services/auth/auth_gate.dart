@@ -1,3 +1,4 @@
+import 'package:chat/pages/verify_email.dart';
 import 'package:chat/services/auth/login_or_register.dart';
 import 'package:chat/pages/home_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -13,7 +14,7 @@ class AuthGate extends StatelessWidget {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return HomePage();
+            return const VerifyEmail();
           } else {
             return const LoginOrRegister();
           }
